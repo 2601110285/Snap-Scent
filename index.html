@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="snap-scent.js" href="snap-scent.js" />
 </head>
 
 <body>
@@ -39,7 +38,6 @@
     </div>
   </header>
 
-
   <section class="hero" id="concept">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
@@ -63,7 +61,6 @@
     </div>
   </section>
 
-
   <div class="concept-strip">
     <div class="concept-strip-inner">
       <span class="concept-tag concept-tag--gold">AI Fragrance Matching</span>
@@ -78,10 +75,37 @@
     </div>
   </div>
 
+  <section class="campaign-slider-section">
+    <div class="slider-container">
+      <div class="slide active" data-title="Spring Floral Collection" data-desc="올봄, 당신의 화사한 원피스에 완벽하게 어울리는 플로럴 향수 컬렉션을 만나보세요. AI가 추천하는 산뜻한 봄의 향기를 경험할 수 있습니다." data-link="#features">
+        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1200&q=80" alt="봄 향수 컬렉션">
+        <div class="slide-text">
+          <h3>Spring Floral Collection</h3>
+          <p>자세히 보기</p>
+        </div>
+      </div>
+      <div class="slide" data-title="Deep Woody Aesthetic" data-desc="차분하고 지적인 무드를 연출하고 싶은 날. 거친 린넨 자켓이나 어두운 색상의 수트에 어울리는 우디 향수 매칭을 시작합니다." data-link="#features">
+        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1200&q=80" alt="우디 향수 컬렉션">
+        <div class="slide-text">
+          <h3>Deep Woody Aesthetic</h3>
+          <p>자세히 보기</p>
+        </div>
+      </div>
+      <div class="slide" data-title="My Signature Scent Print" data-desc="오직 나만의 향수. 지금 신청하시면 커스텀 센트 프린트 1회 무료 제작 바우처를 드립니다. 세상에 하나뿐인 향기를 소장하세요." data-link="#features">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bf85033c46?w=1200&q=80" alt="시그니처 향수 이벤트">
+        <div class="slide-text">
+          <h3>My Signature Scent Print</h3>
+          <p>자세히 보기</p>
+        </div>
+      </div>
+      
+      <button class="slider-btn prev-btn">&#10094;</button>
+      <button class="slider-btn next-btn">&#10095;</button>
+    </div>
+  </section>
 
   <section class="paradigm" id="paradigm">
     <div class="container">
-
       <div class="paradigm-header">
         <span class="section-label">A New Vision</span>
         <div class="gold-line"></div>
@@ -100,7 +124,6 @@
       </div>
 
       <div class="paradigm-grid animate-up delay-2">
-
         <div class="paradigm-card paradigm-card--old">
           <span class="paradigm-tag paradigm-tag--old">기존의 한계</span>
           <div class="gold-line gold-line--left"></div>
@@ -126,16 +149,13 @@
             <span class="paradigm-badge-text">Powered by AI Vision</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
   <section class="features" id="features">
     <div class="features-bg-circle"></div>
     <div class="container">
-
       <div class="features-header">
         <span class="section-label">Core Features</span>
         <div class="gold-line"></div>
@@ -146,7 +166,6 @@
       </div>
 
       <div class="features-grid">
-
         <div class="feature-card animate-up delay-1">
           <div class="feature-card-image">
             <img
@@ -228,16 +247,13 @@
             <div class="feature-card-tag">Signature Fragrance Crafting</div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
   <section class="roadmap" id="roadmap">
     <div class="roadmap-bg"></div>
     <div class="container">
-
       <div class="roadmap-header">
         <span class="section-label" style="color:var(--gold);">Our Journey</span>
         <div class="gold-line"></div>
@@ -249,7 +265,6 @@
       <div class="timeline">
         <div class="timeline-spine" aria-hidden="true"></div>
         <div class="timeline-items">
-
           <div class="timeline-item animate-up delay-1">
             <div class="timeline-content">
               <span class="timeline-phase">Phase 01</span>
@@ -297,17 +312,14 @@
               <p class="timeline-desc">구독형 개인화 조향 서비스 정식 출시</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-
         <div class="footer-logo">
           Snap &amp; <span>Scent</span>
         </div>
@@ -324,7 +336,6 @@
           <p>Visual Mood to Fragrance</p>
           <p style="margin-top:4px; color: rgba(184,155,106,0.5);">AI Scent Intelligence</p>
         </div>
-
       </div>
 
       <em class="footer-tagline">
@@ -332,6 +343,19 @@
       </em>
     </div>
   </footer>
+
+  <div id="info-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title">제목</h3>
+      <div class="gold-line"></div>
+      <p id="modal-desc">상세 설명이 들어갑니다.</p>
+      <a href="#" id="modal-link" class="modal-cta">이동하기</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="snap-scent.js"></script>
 
 </body>
 </html>
