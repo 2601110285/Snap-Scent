@@ -1,16 +1,24 @@
 $(document).ready(function() {
   
-  /* === 1. 광고판 이미지 자동 슬라이더 기능 === */
+  /* === 1. 광고판 이미지 자동 슬라이더 & 하단 점 기능 === */
   let currentSlide = 0;
   const slides = $('.slide');
+  const dots = $('.dot');
   const totalSlides = slides.length;
   let slideInterval;
+
+  // 점(Dot) 색상 업데이트 함수
+  function updateDots() {
+    dots.removeClass('active');
+    dots.eq(currentSlide).addClass('active');
+  }
 
   // 다음 슬라이드로 넘어가는 함수
   function showNextSlide() {
     slides.removeClass('active');
     currentSlide = (currentSlide + 1) % totalSlides;
     slides.eq(currentSlide).addClass('active');
+    updateDots(); // 사진이 바뀔 때 점 위치도 변경
   }
 
   // 이전 슬라이드로 돌아가는 함수
@@ -18,6 +26,7 @@ $(document).ready(function() {
     slides.removeClass('active');
     currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
     slides.eq(currentSlide).addClass('active');
+    updateDots();
   }
 
   // 4초(4000ms)마다 자동으로 다음 사진으로 넘기기
@@ -40,6 +49,22 @@ $(document).ready(function() {
     e.stopPropagation();
     clearInterval(slideInterval);
     showPrevSlide();
+    startSlider();
+  });
+
+  // 🟢 하단 점(Dot) 클릭 시 해당 슬라이드로 바로 이동하는 기능
+  dots.click(function(e) {
+    e.stopPropagation();
+    clearInterval(slideInterval);
+    
+    // 현재 켜져 있는 슬라이드 숨기기
+    slides.removeClass('active');
+    // 클릭한 점의 번호(data-index)를 가져와서 currentSlide에 저장
+    currentSlide = $(this).data('index');
+    // 해당 번호의 슬라이드 보여주기
+    slides.eq(currentSlide).addClass('active');
+    
+    updateDots();
     startSlider();
   });
 
