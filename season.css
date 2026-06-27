@@ -1,0 +1,314 @@
+*, *::before, *::after {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+:root {
+  --ivory: #f5f0e8;
+  --ivory-soft: #faf7f2;
+  --gold: #b89b6a;
+  --gold-light: #d4b98a;
+  --noir: #1a1612;
+  --charcoal: #2e2923;
+  --muted: #7a7065;
+  --muted-light: #a89e92;
+  --ff-display: 'Cormorant Garamond', serif;
+  --ff-body: 'Jost', sans-serif;
+  --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body {
+  font-family: var(--ff-body);
+  background-color: var(--noir);
+  color: var(--ivory);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 상단 헤더 */
+.season-header {
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(184, 155, 106, 0.2);
+  background: rgba(26, 22, 18, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  color: var(--ivory);
+  text-decoration: none;
+}
+
+.logo span { 
+  color: var(--gold); 
+  font-style: italic; 
+}
+
+.season-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 5px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* 메인 컨테이너 */
+.season-container {
+  max-width: 1000px;
+  margin: 140px auto 100px;
+  padding: 0 24px;
+}
+
+.season-title-area { 
+  text-align: center; 
+  margin-bottom: 50px; 
+}
+
+.season-eyebrow { 
+  color: var(--gold); 
+  font-size: 0.8rem; 
+  letter-spacing: 0.3em; 
+  text-transform: uppercase; 
+  margin-bottom: 12px; 
+}
+
+.season-title { 
+  font-family: var(--ff-display); 
+  font-size: clamp(2rem, 5vw, 3rem); 
+  margin-bottom: 15px; 
+  font-weight: 300; 
+}
+
+.season-title em { 
+  color: var(--gold); 
+  font-style: italic; 
+}
+
+.season-sub { 
+  color: var(--muted-light); 
+  font-weight: 200; 
+  font-size: 0.95rem; 
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+/* 계절 선택 메뉴 탭 */
+.season-tab-wrapper {
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.season-tab-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 40px);
+}
+
+.season-tab-menu li {
+  padding: 15px 25px;
+  cursor: pointer;
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  color: rgba(245, 240, 232, 0.4);
+  text-align: center;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.season-tab-menu li span {
+  display: block;
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+.season-tab-menu li::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; 
+  left: 50%; 
+  width: 0; 
+  height: 2px;
+  background: var(--gold);
+  transition: width var(--transition), left var(--transition);
+}
+
+.season-tab-menu li:hover { 
+  color: var(--ivory); 
+}
+
+.season-tab-menu li.active { 
+  color: var(--gold); 
+}
+
+.season-tab-menu li.active::after {
+  width: 100%; 
+  left: 0;
+}
+
+/* 추천 콘텐츠 레이아웃 */
+.season-pane {
+  display: none;
+}
+
+.season-pane.active {
+  display: block;
+  animation: fadeUpEffect 0.5s ease-out forwards;
+}
+
+.perfume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.perfume-card {
+  background: var(--charcoal);
+  border: 1px solid rgba(184, 155, 106, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.perfume-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(184, 155, 106, 0.4);
+}
+
+.perfume-img {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.perfume-img img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  filter: brightness(0.75) saturate(0.8);
+  transition: transform var(--transition);
+}
+
+.perfume-card:hover .perfume-img img {
+  transform: scale(1.05);
+}
+
+.perfume-info {
+  padding: 30px;
+}
+
+.perfume-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.perfume-info h3 {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: var(--ivory);
+}
+
+.perfume-note {
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+  padding-bottom: 12px;
+}
+
+.perfume-desc {
+  font-size: 0.9rem;
+  color: rgba(245, 240, 232, 0.7);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* 향수 카드 내부 링크 버튼 스타일 */
+.perfume-link {
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid rgba(184, 155, 106, 0.4);
+  padding: 10px 24px;
+  color: var(--gold-light);
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: color 0.4s var(--transition);
+  z-index: 1;
+}
+
+.perfume-link::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--transition);
+  z-index: -1;
+}
+
+.perfume-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.perfume-link:hover {
+  color: var(--noir);
+  border-color: var(--gold);
+  font-weight: 400;
+}
+
+/* 반응형 모바일 최적화 */
+@media (max-width: 768px) {
+  .perfume-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .season-tab-menu li {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes fadeUpEffect {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
