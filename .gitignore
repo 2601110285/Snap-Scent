@@ -1,0 +1,44 @@
+# ==========================================
+# 웹 프론트엔드 (HTML/CSS/JS) 기본 무시 파일
+# ==========================================
+
+# 1. 에디터 및 IDE 설정 폴더 (필수)
+# 다른 사람과 VS Code 화면 설정이 충돌하지 않도록 막습니다.
+.vscode/
+.idea/
+*.suo
+*.sln
+
+# 2. 운영체제 시스템 찌꺼기 파일
+# 맥(Mac)이나 윈도우가 폴더마다 몰래 만드는 썸네일/캐시 파일입니다.
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 3. Node.js 패키지 (매우 중요 ⭐)
+# 지금 당장은 안 쓰셔도, 나중에 라이브러리를 설치할 때 엄청난 용량 폭탄을 막아줍니다.
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 4. 빌드 결과물 (배포용 폴더)
+# 나중에 코드를 압축해서 배포할 때 생기는 폴더들입니다.
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# 5. 환경 변수 파일
+# API 키나 비밀번호 등 절대 깃허브에 올라가면 안 되는 파일입니다.
+.env
+.env.local
+.env.development
+.env.production
