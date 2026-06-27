@@ -28,10 +28,9 @@
 
         <nav>
           <ul class="nav-list">
-            <li><a href="#concept">Concept</a></li>
-            <li><a href="#paradigm">Paradigm</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#" id="login-menu-btn">로그인</a></li>
+            <li><a href="guide.html">향수가이드</a></li>
+            <li><a href="season.html">향수 추천</a></li>
           </ul>
         </nav>
       </div>
@@ -57,6 +56,9 @@
         </a>
         <a href="guide.html" class="hero-cta" style="border-color: rgba(245, 240, 232, 0.4); color: var(--ivory);">
           <span class="hero-cta-text">Perfume Guide</span>
+        </a>
+        <a href="season.html" class="hero-cta" style="border-color: rgba(212, 185, 138, 0.4); color: var(--ivory);">
+          <span class="hero-cta-text">Seasonal Scent</span>
         </a>
       </div>
     </div>
@@ -152,11 +154,11 @@
         <div class="gold-line"></div>
         <h2 class="paradigm-title">
           향기 선택의<br />
-          <em>새로운 패러다임</em>
+          새로운 패러다임
         </h2>
       </div>
 
-      <div class="paradigm-image-row animate-up delay-1">
+      <div class="paradigm-image-row">
         <img
           src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=1400&q=80"
           alt="향기와 감성의 만남 - 석양 풍경"
@@ -164,7 +166,7 @@
         />
       </div>
 
-      <div class="paradigm-grid animate-up delay-2">
+      <div class="paradigm-grid">
         <div class="paradigm-card paradigm-card--old">
           <span class="paradigm-tag paradigm-tag--old">기존의 한계</span>
           <div class="gold-line gold-line--left"></div>
@@ -306,7 +308,7 @@
       <div class="timeline">
         <div class="timeline-spine" aria-hidden="true"></div>
         <div class="timeline-items">
-          <div class="timeline-item animate-up delay-1">
+          <div class="timeline-item">
             <div class="timeline-content">
               <span class="timeline-phase">Phase 01</span>
               <h3 class="timeline-heading">Alpha Launch</h3>
@@ -318,7 +320,7 @@
             <div class="timeline-spacer"></div>
           </div>
 
-          <div class="timeline-item animate-up delay-2">
+          <div class="timeline-item">
             <div class="timeline-spacer"></div>
             <div class="timeline-node-wrapper">
               <div class="timeline-node"></div>
@@ -330,7 +332,7 @@
             </div>
           </div>
 
-          <div class="timeline-item animate-up delay-3">
+          <div class="timeline-item">
             <div class="timeline-content">
               <span class="timeline-phase">Phase 03</span>
               <h3 class="timeline-heading">Global Launch</h3>
@@ -342,7 +344,7 @@
             <div class="timeline-spacer"></div>
           </div>
 
-          <div class="timeline-item animate-up delay-4">
+          <div class="timeline-item">
             <div class="timeline-spacer"></div>
             <div class="timeline-node-wrapper">
               <div class="timeline-node"></div>
@@ -392,6 +394,32 @@
       <div class="gold-line"></div>
       <p id="modal-desc">상세 설명이 들어갑니다.</p>
       <a href="#" id="modal-link" class="modal-cta">이동하기</a>
+    </div>
+  </div>
+
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-content login-box">
+      <span class="close-login-btn">&times;</span>
+      <h3>Sign In</h3>
+      <div class="gold-line"></div>
+      
+      <form id="login-form" onsubmit="return false;">
+        <div class="login-input-group">
+          <input type="email" id="login-email" placeholder="이메일 주소" required autocomplete="off">
+        </div>
+        <div class="login-input-group">
+          <input type="password" id="login-pw" placeholder="비밀번호" required>
+        </div>
+        <button type="submit" class="modal-cta login-submit-btn">Login</button>
+      </form>
+
+      <div class="login-option-footer">
+        <a href="#">아이디 찾기</a>
+        <span>|</span>
+        <a href="#">비밀번호 찾기</a>
+        <span>|</span>
+        <a href="#" style="color: var(--gold-light);">회원가입</a>
+      </div>
     </div>
   </div>
 

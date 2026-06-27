@@ -7,7 +7,7 @@ $(document).ready(function() {
   const totalSlides = slides.length;
   let slideInterval;
 
-  // 점(Dot) 색상 업데이트 함수
+  // 점(Dot) 색상 업데이트 함수 (오타 수정 완료)
   function updateDots() {
     dots.removeClass('active');
     dots.eq(currentSlide).addClass('active');
@@ -18,7 +18,7 @@ $(document).ready(function() {
     slides.removeClass('active');
     currentSlide = (currentSlide + 1) % totalSlides;
     slides.eq(currentSlide).addClass('active');
-    updateDots(); // 사진이 바뀔 때 점 위치도 변경
+    updateDots(); 
   }
 
   // 이전 슬라이드로 돌아가는 함수
@@ -34,17 +34,17 @@ $(document).ready(function() {
     slideInterval = setInterval(showNextSlide, 4000);
   }
   
-  startSlider(); // 사이트 열리면 자동 슬라이드 시작
+  startSlider(); // 자동 슬라이드 작동 시동
 
-  // 오른쪽 화살표 클릭 시 동작
+  // 오른쪽 화살표 클릭
   $('.next-btn').click(function(e) {
-    e.stopPropagation(); // 모달 클릭과 겹쳐서 열리는 현상 방지
-    clearInterval(slideInterval); // 누르면 자동 넘김 잠시 멈춤
+    e.stopPropagation(); 
+    clearInterval(slideInterval); 
     showNextSlide();
-    startSlider(); // 다시 4초 카운트 시작
+    startSlider(); 
   });
 
-  // 왼쪽 화살표 클릭 시 동작
+  // 왼쪽 화살표 클릭
   $('.prev-btn').click(function(e) {
     e.stopPropagation();
     clearInterval(slideInterval);
@@ -52,51 +52,69 @@ $(document).ready(function() {
     startSlider();
   });
 
-  // 🟢 하단 점(Dot) 클릭 시 해당 슬라이드로 바로 이동하는 기능
+  // 하단 점(Dot) 클릭 제어
   dots.click(function(e) {
     e.stopPropagation();
     clearInterval(slideInterval);
-    
-    // 현재 켜져 있는 슬라이드 숨기기
     slides.removeClass('active');
-    // 클릭한 점의 번호(data-index)를 가져와서 currentSlide에 저장
     currentSlide = $(this).data('index');
-    // 해당 번호의 슬라이드 보여주기
     slides.eq(currentSlide).addClass('active');
-    
     updateDots();
     startSlider();
   });
 
 
   /* === 2. 모달 팝업(상세보기) 창 기능 === */
-  // 슬라이드 이미지를 클릭했을 때 모달 열기
   $('.slide').click(function() {
-    // HTML에 미리 적어둔 글자(제목, 설명, 링크)를 가져오기
     const title = $(this).attr('data-title');
     const desc = $(this).attr('data-desc');
     const link = $(this).attr('data-link');
 
-    // 모달창 뼈대 안에 가져온 글자들을 채워 넣기
     $('#modal-title').text(title);
     $('#modal-desc').text(desc);
     $('#modal-link').attr('href', link);
 
-    // 모달창 부드럽게 띄우기 (제이쿼리 fadeIn 사용)
     $('#info-modal').fadeIn(300).css('display', 'flex');
-    clearInterval(slideInterval); // 모달 창이 열리면 사진이 넘어가지 않게 슬라이드 멈춤
+    clearInterval(slideInterval); 
   });
 
-  // X 버튼이나 바깥의 어두운 배경을 누르면 모달 닫기
-  $('.close-btn, .modal-overlay').click(function(e) {
-    // 사용자가 누른 곳이 모달 하얀 박스가 아니라 바깥쪽일 때만 닫기
+  // X 버튼(상세조회용)을 누르면 모달 닫기
+  $('.close-btn').click(function() {
+    $('#info-modal').fadeOut(300);
+    startSlider();
+  });
+
+
+  /* === 3. 🌟 로그인 모달 활성화 및 모바일 메뉴 연동 기능 === */
+  // 로그인 상단 버튼 클릭 이벤트
+  $('#login-menu-btn').click(function(e) {
+    e.preventDefault();
+    
+    // 모바일 버전 세 줄 체크박스가 열려있다면 자동으로 닫기 처리
+    $('#nav-toggle').prop('checked', false);
+    
+    // 로그인 창 부드럽게 출력 및 슬라이더 타이머 정지
+    $('#login-modal').fadeIn(300).css('display', 'flex');
+    clearInterval(slideInterval);
+  });
+
+  // 로그인 모달 내부 X 버튼 클릭 이벤트
+  $('.close-login-btn').click(function() {
+    $('#login-modal').fadeOut(300);
+    startSlider();
+  });
+
+
+  /* === 4. 모달창 통합 배경 공통 닫기 제어 === */
+  // 검은색 투명 배경 레이어 스페이스를 클릭 시 일괄 종료
+  $('.modal-overlay').click(function(e) {
     if (e.target === this) {
       $('#info-modal').fadeOut(300);
-      startSlider(); // 창이 닫히면 다시 광고판 자동 슬라이드 시작
+      $('#login-modal').fadeOut(300);
+      startSlider(); 
     }
   });
   
-  // 모달 안의 '이동하기' 버튼을 눌렀을 때 모달 닫기
   $('#modal-link').click(function() {
     $('#info-modal').fadeOut(300);
     startSlider();

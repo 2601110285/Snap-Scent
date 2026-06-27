@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snap & Scent — Seasonal Curation</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="season.css" />
+</head>
+<body>
+
+  <header class="season-header">
+    <a href="index.html" class="logo">Snap &amp; <span>Scent</span></a>
+    <span class="season-badge">Seasonal Curation</span>
+  </header>
+
+  <div class="season-container">
+    
+    <div class="season-title-area">
+      <p class="season-eyebrow">The Scent of Four Seasons</p>
+      <h1 class="season-title">계절의 흐름을 담은 <em>향기 큐레이션</em></h1>
+      <p class="season-sub">바람의 온도와 공기의 질감이 바뀔 때, 당신의 무드를 완성해 줄 향수를 제안합니다.</p>
+    </div>
+
+    <div class="season-tab-wrapper">
+      <ul class="season-tab-menu">
+        <li class="active" data-season="spring">Spring <span>봄</span></li>
+        <li data-season="summer">Summer <span>여름</span></li>
+        <li data-season="autumn">Autumn <span>가을</span></li>
+        <li data-season="winter">Winter <span>겨울</span></li>
+      </ul>
+    </div>
+
+    <div class="season-content-area">
+
+      <div class="season-pane active" id="season-spring">
+        <div class="perfume-grid">
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1582211594533-268f4f1edcb9?w=600&q=80" alt="딥티크 오 로즈">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Floral / Romantic</span>
+              <h3>Diptyque — Eau Rose</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Damask Rose, Centifolia Rose, Litchi</p>
+              <p class="perfume-desc">장미 정원의 싱그러움을 고스란히 담아낸 향수입니다. 인위적이지 않은 생화 장미 본연의 달콤함과 풋풋함이 봄날의 설렘을 완성합니다.</p>
+              <a href="https://www.diptyqueparis.com/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&q=80" alt="조말론 피오니 앤 블러쉬 스웨이드">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Fresh Floral / Elegant</span>
+              <h3>Jo Malone — Peony & Blush Suede</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Red Apple, Peony, Suede</p>
+              <p class="perfume-desc">만개한 작약의 화려함과 부드러운 스웨이드의 관능미가 어우러진 향입니다. 싱그러운 붉은 사과 향으로 시작해 우아한 플로럴로 이어집니다.</p>
+              <a href="https://www.jomalone.co.kr/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="season-pane" id="season-summer">
+        <div class="perfume-grid">
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=600&q=80" alt="아쿠아 디 파르마 미르토">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Marine Citrus / Cool</span>
+              <h3>Acqua di Parma — Mirto di Panarea</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Myrtle, Basil, Lemon, Ocean Breeze</p>
+              <p class="perfume-desc">지중해 파나레아 섬의 청량한 바닷바람과 싱그러운 레몬 향을 담았습니다. 무더운 여름철, 시원하고 활력 넘치는 무드를 선사합니다.</p>
+              <a href="https://www.acquadiparma.com/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&q=80" alt="바이레도 블랑쉬">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Clean Cotton / Soap</span>
+              <h3>Byredo — Blanche</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Aldehyde, White Rose, Neroli, Musk</p>
+              <p class="perfume-desc">하얀 시트와 맑고 깨끗한 비누 잔향을 시각화한 바이레도의 상징적인 향수입니다. 맑고 자극적이지 않아 사계절 내내 포근한 인상을 줍니다.</p>
+              <a href="https://www.byredo.com/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="season-pane" id="season-autumn">
+        <div class="perfume-grid">
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600&q=80" alt="이솝 테싯">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Woody / Deep Forest</span>
+              <h3>Aesop — Tacit</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Yuzu, Vetiver, Basil, Cedarwood</p>
+              <p class="perfume-desc">마음이 편안해지는 유자와 베티버, 흙내음이 감도는 묵직한 우디 향수입니다. 가을날 새벽안개가 자욱한 깊은 숲속을 걷는 듯한 지적인 차분함을 줍니다.</p>
+              <a href="https://www.aesop.com/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="르라보 상탈 33">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Aromatic Woody / Smoky</span>
+              <h3>Le Labo — Santal 33</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Sandalwood, Cedarwood, Leather, Cardamom</p>
+              <p class="perfume-desc">가죽 냄새와 스모키한 캠프파이어의 무드가 어우러진 아로마틱 우디 향입니다. 빈티지하면서도 세련된 낙엽의 감성을 완성도 높게 구현했습니다.</p>
+              <a href="https://www.lelabofragrances.com/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="season-pane" id="season-winter">
+        <div class="perfume-grid">
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" alt="톰포드 화이트 스웨이드">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Heavy Musk / Cozy Velvet</span>
+              <h3>Tom Ford — White Suede</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Suede, Saffron, Musk, Amber</p>
+              <p class="perfume-desc">체온에 녹아든 고급스러운 부드러운 가죽과 따스한 머스크가 결합한 향수입니다. 겨울철 두툼한 캐시미어 니트와 어울리는 포근하고 관능적인 잔향을 남깁니다.</p>
+              <a href="https://www.tomford.com/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+          <div class="perfume-card">
+            <div class="perfume-img">
+              <img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?w=600&q=80" alt="메종 마르지엘라 재즈클럽">
+            </div>
+            <div class="perfume-info">
+              <span class="perfume-tag">Oriental Amber / Smoky</span>
+              <h3>Maison Margiela — Jazz Club</h3>
+              <p class="perfume-note"><strong>Notes:</strong> Rum, Tobacco Leaf, Vanilla, Pink Pepper</p>
+              <p class="perfume-desc">위스키와 달콤한 바닐라, 잔잔한 담뱃잎 연기가 깔린 재즈바 분위기의 향수입니다. 묵직하고 달콤하면서도 스모키한 여운이 긴 중독성을 선사합니다.</p>
+              <a href="https://www.maisonmargiela-fragrances.us/" target="_blank" rel="noopener noreferrer" class="perfume-link">
+                <span>자세히 보기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="season.js"></script>
+</body>
+</html>
