@@ -1,7 +1,7 @@
 # 🕯️ Snap & Scent
 > **시각적 무드를 향기로 번역하는 AI 맞춤형 조향 서비스**
 
-🔗 **웹사이트 바로가기 :** [https://2601110285.github.io/Snap-Scent/](https://2601110285.github.io/Snap-Scent/)
+🔗 **웹사이트 바로가기 :** [https://yumin0117.github.io/Snap-Scent/](https://yumin0117.github.io/Snap-Scent/)
 
 ---
 
